@@ -38,14 +38,13 @@ function App() {
 
       const waiting = countdownDate - now;
 
-      console.log('waiting', waiting)
 
       const days = Math.floor(waiting / (1000 * 60 * 60 * 24));
       const hours = Math.floor((waiting % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((waiting % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((waiting % (1000 * 60)) / 1000);
 
-      setCountdown(countdown => ({
+      setCountdown(({
         days:days,
         hours:hours,
         minutes:minutes,
@@ -74,7 +73,7 @@ function App() {
         return;
       }
     }
-    setStoriesLibrary(oldstories => ({
+    setStoriesLibrary(({
       name:story.name,
       date:story.date,
       time:story.time,
